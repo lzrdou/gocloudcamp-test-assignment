@@ -1,6 +1,10 @@
 django
-djangorestframework==3.14.0
+djangorestframework
 python-dotenv==0.21.0
 gunicorn
 django-reversion
-django-filter
+django-reversion-compare
+psycopg2-binary
+asgiref==3.2.10
+pytz==2020.1
+sqlparse==0.3.1

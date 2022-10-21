@@ -53,11 +53,13 @@ class ServiceConfig(models.Model):
     service = models.ForeignKey(
         Service,
         on_delete=models.CASCADE,
+        related_name='service',
         verbose_name='Сервис'
     )
     config = models.ForeignKey(
         Config,
         on_delete=models.CASCADE,
+        related_name='config',
         verbose_name='Конфигурация'
     )
 

@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.forms.models import BaseInlineFormSet
-from reversion.admin import VersionAdmin
-from .models import Service, Config, ServiceConfig
+from reversion_compare.admin import CompareVersionAdmin
+
+from .models import Config, Service, ServiceConfig
 
 
 class ServiceConfigInlineFormset(BaseInlineFormSet):
@@ -35,7 +36,7 @@ class ServiceAdmin(admin.ModelAdmin):
 
 
 @admin.register(Config)
-class ConfigAdmin(VersionAdmin):
+class ConfigAdmin(CompareVersionAdmin):
     list_display = (
         'name',
     )
