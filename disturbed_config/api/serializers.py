@@ -75,7 +75,6 @@ class ConfigSerializer(serializers.ModelSerializer):
     @transaction.atomic
     def _perform(self, validated_data, inst=None):
         services = validated_data.pop('service')
-        print(services)
         config = self._create_or_update(validated_data, inst)
         services_id = [Service.objects.get(slug=slug).id for slug in services]
         if ServiceConfig.objects.filter(service__id__in=services_id).exists:
