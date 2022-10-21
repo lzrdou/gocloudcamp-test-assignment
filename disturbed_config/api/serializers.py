@@ -38,6 +38,19 @@ class DetailConfigSerializer(serializers.ModelSerializer):
         )
 
 
+class ConfigListSerializer(serializers.ModelSerializer):
+    service = CustomServiceField()
+
+    class Meta:
+        model = Config
+        fields = (
+            'id',
+            'name',
+            'service',
+            'status'
+        )
+
+
 class ConfigSerializer(serializers.ModelSerializer):
     service = CustomServiceField()
     name = serializers.CharField()
@@ -49,8 +62,8 @@ class ConfigSerializer(serializers.ModelSerializer):
     class Meta:
         model = Config
         fields = (
-            'service',
             'name',
+            'service',
             'status'
         )
 

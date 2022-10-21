@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from reversion.views import RevisionMixin
 
 from .models import Config, Service, ServiceConfig
-from .serializers import (ConfigSerializer, DetailConfigSerializer,
-                          ServiceSerializer)
+from .serializers import (ConfigSerializer, ConfigListSerializer,
+                          DetailConfigSerializer, ServiceSerializer)
 
 
 class ServiceViewSet(viewsets.ModelViewSet):
@@ -45,4 +45,6 @@ class ConfigViewSet(RevisionMixin, viewsets.ModelViewSet):
     def get_serializer_class(self):
         if 'service' in self.request.query_params:
             return DetailConfigSerializer
+        elif self.action == 'list':
+            return ConfigListSerializer
         return ConfigSerializer
