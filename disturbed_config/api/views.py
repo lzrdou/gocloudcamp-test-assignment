@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from reversion.views import RevisionMixin
 
 from .models import Config, Service, ServiceConfig
-from .serializers import (ConfigSerializer, ConfigListSerializer,
+from .serializers import (ConfigListSerializer, ConfigSerializer,
                           DetailConfigSerializer, ServiceSerializer)
 
 
