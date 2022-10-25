@@ -54,7 +54,9 @@ PATCH http://localhost/api/configs/1/
 ```
 {
     "name": "updated test config",
-    "service": [],
+    "service": [
+        "test2",
+    ],
     "status": "A"
 }
 ```
